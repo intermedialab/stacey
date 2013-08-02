@@ -1,7 +1,7 @@
-# ole.kristensen.name
+# intermedia.itu.dk
 
 ## A forked Stacey 3.0 with Bootstrap
-This is my homepage [ole.kristensen.name](http://ole.kristensen.name), that integrates the Twitter Bootstrap with the excellent Staceyapp template system.
+This is the homepage for the Intermedia Lab at the IT University of Copenhagen [intermedia.itu.dk](http://intermedia.itu.dk), that integrates the Twitter Bootstrap with the excellent Staceyapp template system.
 
 It's a databaseless portfolio for my works, feel free to get inspired and roll your own from here.
 
