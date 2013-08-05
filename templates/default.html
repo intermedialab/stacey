@@ -24,108 +24,10 @@
 	      <div class="carousel-inner">	
 			<div class="item active carousel-loader">
         		<div class="container" style="height:100%;">
-						<script type="application/processing">
-						int numBalls = 7;
-						float spring = 0.01;
-						float gravity = 0.03;
-						Ball[] balls = new Ball[numBalls];
-
-						void setup() 
-						{
-						  size(200, 400);
-						  noStroke();
-						  smooth();
-						  for (int i = 0; i < numBalls; i++) {
-						    balls[i] = new Ball(random(width), random(height), random(30, 60), i, balls);
-						  }
-						}
-
-						void draw() 
-						{
-						  background(0,0,0,0);
-						  for (int i = 0; i < numBalls; i++) {
-						    balls[i].collide();
-						    balls[i].move();
-						    balls[i].display();  
-						  }
-						}
-
-						class Ball {
-						  float x, y;
-						  float diameter;
-						  float vx = 0;
-						  float vy = 0.4;
-						  int id;
-						  Ball[] others;
-
-						  Ball(float xin, float yin, float din, int idin, Ball[] oin) {
-						    x = xin;
-						    y = yin;
-						    diameter = din;
-						    id = idin;
-						    others = oin;
-							if(id==0){
-								y = 0;
-							}
-						  } 
-
-						  void collide() {
-						    for (int i = id + 1; i < numBalls; i++) {
-						      float dx = others[i].x - x;
-						      float dy = others[i].y - y;
-						      float distance = sqrt(dx*dx + dy*dy);
-						      float minDist = others[i].diameter/2 + diameter/2;
-						      if (distance < minDist) { 
-						        float angle = atan2(dy, dx);
-						        float targetX = x + cos(angle) * minDist;
-						        float targetY = y + sin(angle) * minDist;
-						        float ax = (targetX - others[i].x) * spring;
-						        float ay = (targetY - others[i].y) * spring;
-						        vx -= ax;
-						        vy -= ay;
-						        others[i].vx += ax;
-						        others[i].vy += ay;
-						      }
-						    }   
-						  }
-
-						  void move() {
-						    vy += gravity;
-						    x += vx;
-						    y += vy;
-						    if (x + diameter/2 > width) {
-						      x = width - diameter/2;
-						      vx += -0.9; 
-						    }
-						    else if (x - diameter/2 < 0) {
-						      x = diameter/2;
-						      vx *= -0.9;
-						    }
-						    if (y + diameter/2 > height) {
-						      y = height - diameter/2;
-						      vy *= -0.45; 
-						    } 
-						    else if (y - diameter/2 < 0) {
-						      y = diameter/2;
-						      vy *= -0.9;
-						    }
-						  }
-
-						  void display() {
-							if(id==0){
-							    fill(27,27,27);
-							} else{
-							    fill(255);
-							}
-						    ellipse(x, y, diameter, diameter);
-						  }
-						}
-						</script><canvas width="200" height="400" style="position:absolute;bottom:0%;right:0%;margin-bottom:-4px;z-index:-1"></canvas>
 				    <div class="carousel-caption">
-		              <h1>Featured works</h1>
-		              <p class="lead">Wait a bit for the slides, or ...</p>
-			      <a class="btn btn-inverse btn-large" href="/works">Browse my work selection  &raquo;</a>
-
+		              <h1>INTERMEDIA LAB</h1>
+		              <p class="lead">a space for experiential research with full scale computational prototypes</p>
+			      <a class="btn btn-inverse btn-large" href="{{ page.site_root }}lab">Learn more about the lab  &raquo;</a>
 		            </div>
 		          </div>
 		        </div>
@@ -160,18 +62,18 @@
 
 		      <!-- Three columns of text below the carousel -->
 		      <div class="row">
-		        <div class="span4 offset1" class="iconContainer" id="containerWork">
+		        <div class="span4" class="iconContainer" id="containerWork">
 				  <canvas width="140" height="140" id="iconWork" data-processing-sources="/processing/iconWork/iconWork.pde" ></canvas>
 		          {{ page.column1text }}
 		          <p><a class="btn" href="{{ page.site_root }}{{ page.column1url }}">{{ page.column1button }} &raquo;</a></p>
 		        </div>
-		        <!-- <div class="span4">
+		        <div class="span4">
 		        	<script type="application/processing" src="/processing/iconLab/iconLab.pde">
                      </script><canvas width="140" height="140"></canvas>
 		          {{ page.column2text }}
 		          <p><a class="btn" href="{{ page.site_root }}{{ page.column2url }}">{{ page.column2button }} &raquo;</a></p>
-			</div> -->
-		        <div class="span4 offset2" class="iconContainer" id="containerMe">
+			</div>
+		        <div class="span4" class="iconContainer" id="containerMe">
 				  <canvas width="140" height="140" id="iconMe" data-processing-sources="/processing/iconMe/iconMe.pde" ></canvas>
 		          {{ page.column3text }}
 		          <p><a class="btn" href="{{ page.site_root }}{{ page.column3url }}">{{ page.column3button }} &raquo;</a></p>

@@ -2,24 +2,21 @@
  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
  <title>{{ page.name }}{% if ".//" != page.url %} &gt; {{ page.title | lower }} {% endif %}</title>
 
- <meta name="author" content="ole kristensen">
- <meta name="description" content="I make software art, build electronic stuff and teach creative programming">
+ <meta name="author" content="IT University of Copenhagen">
+ <meta name="description" content="Intermedia Lab, a space for experiential research in full scale computational prototypes">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
- <meta property="og:type" content="portfolio" />
- <meta property="og:title" content="ole kristensen" />
- <meta property="og:description" content="software artist" />
- <meta property="og:url" content="http://ole.kristensen.name/" />
- <meta property="og:site_name" content="ole kristensen" />
- <meta name="twitter:site" content="@olefab" />
- <meta name="google-site-verification" content="NJrN1kMntzXT4pLxmaLZgP-Lj4tzdKGe5O_Vw-ofxQw" />
+ <meta property="og:type" content="lab" />
+ <meta property="og:title" content="Intermedia Lab" />
+ <meta property="og:description" content="a space for experiential research in full scale computational prototypes" />
+ <meta property="og:url" content="http://intermedia.itu.dk/" />
+ <meta property="og:site_name" content="Intermedia Lab" />
+ <meta name="twitter:site" content="" />
 
- <link id="page_favicon" href="/favicon.ico" rel="icon" type="image/x-icon" />
-
- <link rel="canonical" href="http://ole.kristensen.name/{% if page.permalink != '/' %}{{page.permalink}}{% endif %}" />
+ <link id="page_favicon" href="{{ page.site_root }}favicon.ico" rel="icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300" rel="stylesheet" type="text/css">
+ <link rel="canonical" href="http://intermedia.itu.dk/{{ page.site_root }}{% if page.permalink != '/' %}{{page.permalink}}{% endif %}" />
  <link rel="alternate" type="application/atom+xml" href="/feed/">
 
- <link rel="stylesheet" href="/public/docs/css/bootstrap.min.css">
- <script type="text/javascript" src="//use.typekit.net/ofn6bfj.js"></script>
- <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
- <link rel="stylesheet" href="/public/docs/css/main.css">
+ <link rel="stylesheet" href="public/docs/css/bootstrap.min.css">
+ <link rel="stylesheet" href="public/docs/css/main.css">

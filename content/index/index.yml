@@ -1,19 +1,18 @@
 title: Home
-column1button: Selected Works
-column1url: works
+column1button: Featured Projects
+column1url: projects
 column1text: |
- ## Works
- This site features a selection of my works. They all involve custom tailored software and range from small artefacts to complex large scale installations and interactive stage designs.
+ ## Projects
+ A selection of student projects and research from Intermedia Lab.
 
-column2button: Visit the lab
-column2url: lab
+column2button: People
+column2url: people
 column2text: |
- ## Lab
- 
- Most of the source code for the software in my work is public and open source. Coding is a collective practice, and a few of my experiments might take on a life of their own.          
+ ## People
+ Quite a few people make use of Intermedia Lab, here's a core sample of them.
 
-column3button: About me
-column3url: about
+column3button: The lab
+column3url: lab
 column3text: |
- ## About
- My interest in programming stems from a fascination of creating phenomena with dynamic aestetics. Read a bit more of that story and see where it's taken me in my biography and CV.
+ ## The lab
+ Have a look at the space and what facillities it offers.
