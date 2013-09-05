@@ -24,6 +24,7 @@
 					{% for html in page.html %}
 						{{ html.content }}
 					{% endfor %}
+
 					{% if page.images %}
 					<div id="myCarousel" class="carousel slide carousel-fade" style="margin-bottom:4px;">
 						<!-- Carousel items -->
@@ -45,110 +46,46 @@
 					{% endif %}
 				</div>
 				<div class="span4">
-					<!--<p class="lead">{{ page.lead }}</p>-->
-					<p class="lead"><small>{{ page.materials }}</small></p>
+					<p class="lead"><small>{{ page.materials | join(', ')}}</small></p>
 					<p style="margin-top:30px;"><small>
 						{% include 'partials/tags.html' %}
 					<br/>&nbsp;</small></p>
-					<h5>{{ page.lead }}</h5>
-					{{ page.content }}
-					<p><small>{% if page.partners %}With: {{ page.partners }}<br />{% endif %}
-					{% if page.client %}For: {{ page.client }}<br />{% endif %}
-					{% if page.project_url%}Full credits at the <a href="{{ page.project_url }}">project website</a> {% endif %}</small></p>
+					<h5>{{ page.summary }}</h5>
+					{{ page.abstract }}
+					{% if page.url%}<a href="{{ page.homepage }}">{{page.homepage}}</a> {% endif %}</small></p>
 
 					<div class="visible-desktop">
-					{% if page.awards %}
+					{% if page.participants %}
 						<hr/>
-						<p class="lead"><small>Awards:</small></p>
+						<p class="lead"><small>Participants:</small></p>
 						<table>
 							<tbody>
-							{% for award in page.awards %}
+							{% for participant in page.participants %}
 						    <tr>
-						      <td nowrap="nowrap" valign="top"><small>{{award.date | date("Y")}}</small>&nbsp;</td>
-						      <td><small><a href="{{ award.url }}">{{ award.title }} at {{ award.place }}</a></small></td>
+						      <td nowrap="nowrap" valign="top"><small>{{participant.role}}:</small>&nbsp;</td>
+						      <td><small>{{ participant.name }}</small></td>
 						    </tr>
 							{% endfor %}
 						  </tbody>
 						</table>
-					{% endif %}
-					{% if page.appearances %}
-						<hr/>
-						<p class="lead"><small>Appearances:</small></p>
-						<table>
-							<tbody>
-							{% for appearance in page.appearances %}
-						    <tr>
-						      <td nowrap="nowrap" valign="top"><small>{{appearance.date | date("Y m")}}</small>&nbsp;</td>
-						      <td><small><a href="{{ appearance.url }}">{{ appearance.occasion }} at {{ appearance.place }}</a></small></td>
-						    </tr>
-							{% endfor %}
-						  </tbody>
-						</table>
-					{% endif %}
-					{% if page.github %}
-						<hr/>
-						<p class="lead"><small>Open Source code:</small></p>
-						<p>
-						<iframe src="http://ghbtns.com/github-btn.html?user={{page.github['user']}}&repo={{page.github['repo']}}&type=watch"
-	  allowtransparency="true" frameborder="0" scrolling="0" width="62" height="30"></iframe>
-	
-	<iframe src="http://ghbtns.com/github-btn.html?user={{page.github['user']}}&repo={{page.github['repo']}}&type=fork"
-	  allowtransparency="true" frameborder="0" scrolling="0" width="53" height="30"></iframe>
-						</p>
-						{% elseif page.googlecode %}
-						<hr/>
-						<p class="lead"><small>Open Source code:</small></p>
-						<p><a class="btn btn-small" href="http://code.google.com/p/{{ page.googlecode }}">Google Code Project</a>
-						</p>
 					{% endif %}
 					</div>
 				</div>
 			</div>
 			<div class="hidden-desktop">
-			{% if page.awards %}
-				<hr/>
-				<p class="lead"><small>Awards:</small></p>
-				<table>
-					<tbody>
-					{% for award in page.awards %}
-				    <tr>
-				      <td nowrap="nowrap" valign="top"><small>{{award.date | date("Y")}}</small>&nbsp;</td>
-				      <td><small><a href="{{ award.url }}">{{ award.title }} at {{ award.place }}</a></small></td>
-				    </tr>
-					{% endfor %}
-				  </tbody>
-				</table>
-			{% endif %}
-			{% if page.appearances %}
-				<hr/>
-				<p class="lead"><small>Appearances:</small></p>
-				<table>
-					<tbody>
-					{% for appearance in page.appearances %}
-				    <tr>
-				      <td nowrap="nowrap" valign="top"><small>{{appearance.date | date("Y m")}}</small>&nbsp;</td>
-				      <td><small><a href="{{ appearance.url }}">{{ appearance.occasion }} at {{ appearance.place }}</a></small></td>
-				    </tr>
-					{% endfor %}
-				  </tbody>
-				</table>
-			{% endif %}
-			{% if page.github %}
-				<hr/>
-				<p class="lead"><small>Open Source code:</small></p>
-				<p>
-				<iframe src="http://ghbtns.com/github-btn.html?user={{page.github['user']}}&repo={{page.github['repo']}}&type=watch"
-	  allowtransparency="true" frameborder="0" scrolling="0" width="62" height="30"></iframe>
-	
-	<iframe src="http://ghbtns.com/github-btn.html?user={{page.github['user']}}&repo={{page.github['repo']}}&type=fork"
-	  allowtransparency="true" frameborder="0" scrolling="0" width="53" height="30"></iframe>
-				</p>
-			{% elseif page.googlecode %}
-				<hr/>
-				<p class="lead"><small>Open Source code:</small></p>
-				<p><a class="btn btn-small" href="http://code.google.com/p/{{ page.googlecode }}">Google Code Project</a>
-				</p>
-			{% endif %}
+			{% if page.participants %}
+                                                <hr/>
+                                                <p class="lead"><small>Participants:</small></p>
+                                                <table>
+                                                        <tbody>
+                                                        {% for participant in page.participants %}
+                                                    <tr>
+                                                      <td nowrap="nowrap" valign="top"><small>{{participant.role}}:</small>&nbsp;</td>                                                      <td><small>{{ participant.name }}</small></td>
+                                                    </tr>
+                                                        {% endfor %}
+                                                  </tbody>
+                                                </table>
+                                        {% endif %}
 			</div>
 			<hr/>
 			<p class="lead"><small>Timeline:</small></p>

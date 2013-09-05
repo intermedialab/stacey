@@ -22,12 +22,14 @@
 	    ================================================== -->
 	    <div id="myCarousel" class="carousel slide carousel-frontpage carousel-shuffle">
 	      <div class="carousel-inner">	
-			<div class="item active carousel-loader">
+			<div class="item active carousel-loader" style="
+  background-image: url('/render/w1200-c16:9-q80/wallpaper.jpg');
+			">
         		<div class="container" style="height:100%;">
 				    <div class="carousel-caption">
-		              <h1>INTERMEDIA LAB</h1>
+		              <h2 class="featurette-heading">{{ page.name | upper}}</h2>
 		              <p class="lead">a space for experiential research with full scale computational prototypes</p>
-			      <a class="btn btn-inverse btn-large" href="{{ page.site_root }}lab">Learn more about the lab  &raquo;</a>
+			    <!--  <a class="btn btn-inverse btn-large" href="{{ page.site_root }}lab">Learn more about the lab  &raquo;</a>-->
 		            </div>
 		          </div>
 		        </div>
@@ -36,13 +38,12 @@
 	    		{% for child in child.children | reverse%}
 		  			{% if "Featured" in child.tags %}
 				        <div class="item">
-				          <img src="{{ resize_path( child.thumb.url, '1200', '', '', 80) }}" alt="{% if child.thumb.description %} {{ child.thumb.description }} {% endif %}" class="vertical-center gray">
+				          <img src="{{ resize_path( child.thumb.url, '1200', '', '1:1', 80) }}" alt="{% if child.thumb.description %} {{ child.thumb.description }} {% endif %}" class="vertical-center gray">
 				          <div class="container">
 				            <div class="carousel-caption">
-				              <h1>{{ child.title }}</h1>
-				              <p class="lead">{{ child.date | date("Y") }}</p>
-							  <p class="lead hidden-phone">{{ child.materials | striptags }} &mdash;&nbsp;{{ child.lead | striptags }}</p>
-			              	  <a class="btn btn-inverse btn-large" href="{{ child.url }}">{% if child.html %}Watch a video {% else %}See the photos{% endif %} &raquo;</a> 
+				              <h2 class="featurette-heading" style="color:white;">{{ child.title }}</h2><br/>
+				              <p class="lead">{{ child.date | date("Y") }}</p><br/>
+			              	  <a class="btn btn-large" href="{{ child.url }}">{% if child.html %}Watch a video {% else %}See the photos{% endif %} &raquo;</a> 
 				            </div>
 				          </div>
 				        </div>
@@ -63,19 +64,19 @@
 		      <!-- Three columns of text below the carousel -->
 		      <div class="row">
 		        <div class="span4" class="iconContainer" id="containerWork">
-				  <canvas width="140" height="140" id="iconWork" data-processing-sources="/processing/iconWork/iconWork.pde" ></canvas>
+<!--				  <canvas width="140" height="140" id="iconWork" data-processing-sources="/processing/iconWork/iconWork.pde" ></canvas>-->
 		          {{ page.column1text }}
 		          <p><a class="btn" href="{{ page.site_root }}{{ page.column1url }}">{{ page.column1button }} &raquo;</a></p>
 		        </div>
 		        <div class="span4">
-		        	<script type="application/processing" src="/processing/iconLab/iconLab.pde">
+<!--		        	<script type="application/processing" src="/processing/iconLab/iconLab.pde">
                      </script><canvas width="140" height="140"></canvas>
-		          {{ page.column2text }}
+-->		          {{ page.column2text }}
 		          <p><a class="btn" href="{{ page.site_root }}{{ page.column2url }}">{{ page.column2button }} &raquo;</a></p>
 			</div>
 		        <div class="span4" class="iconContainer" id="containerMe">
-				  <canvas width="140" height="140" id="iconMe" data-processing-sources="/processing/iconMe/iconMe.pde" ></canvas>
-		          {{ page.column3text }}
+<!--				  <canvas width="140" height="140" id="iconMe" data-processing-sources="/processing/iconMe/iconMe.pde" ></canvas>
+-->		          {{ page.column3text }}
 		          <p><a class="btn" href="{{ page.site_root }}{{ page.column3url }}">{{ page.column3button }} &raquo;</a></p>
 		        </div>
 		      </div><!-- /.row -->

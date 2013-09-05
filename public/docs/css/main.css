@@ -1,5 +1,3 @@
-
-
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
@@ -24,6 +22,10 @@
 	     -o-font-smoothing: antialiased;
 		font-smoothing: antialiased;
  }
+ 
+ iframe {
+  border: none;
+ }
 
  footer {
  	margin-top:80px;
@@ -37,22 +39,87 @@ body, .btn {
 	font-family: "Open Sans", 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+h1, h2, h3 {
+	font-weight: normal;
+}
+
 /* BUTTONS */
 
 .btn {
 	background-image:none;
 	border:none;
-	box-shadow:0 6px rgba(0,0,0,0.75);	
+	box-shadow: 0 2px 0px #E6E6E6;
 }
 
 .btn:hover {
-        box-shadow:0 6px rgba(0,0,0,1);              
+        box-shadow:0 4px #BFBFBF;
+		position:relative;
+		top:-2px;
+}
+
+.btn:active, .btn.active {
+	-webkit-box-shadow: inset 0 2px 0px rgba(0, 0, 0, 0.15);
+	   -moz-box-shadow: inset 0 2px 0px rgba(0, 0, 0, 0.15);
+	        box-shadow: inset 0 2px 0px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+	box-shadow: 0 2px 0px #04C;
+}
+.btn-primary:hover {
+	box-shadow: 0 4px #002A80;
+}
+
+.btn-info {
+	box-shadow: 0 2px 0px #2F96B4;
+}
+
+.btn-info:hover {
+	box-shadow: 0 4px #1F6377;
+}
+
+.btn-success {
+	box-shadow: 0 2px 0px #51A351;
+}
+
+.btn-success:hover {
+	box-shadow: 0 4px #387038;
+}
+
+.btn-warning {
+	box-shadow: 0 2px 0px #F89406;
+}
+
+.btn-warning:hover {
+	box-shadow: 0 4px #AD6704;
+}
+
+.btn-danger {
+	box-shadow: 0 2px 0px #BD362F;
+}
+
+.btn-danger:hover {
+	box-shadow: 0 4px #802420;
+}
+
+.btn-inverse {
+	box-shadow: 0 2px 0px #000;
+}
+
+.btn-inverse:hover {
+	box-shadow: 0 4px #333;
+}
+
+.btn-link, .btn-link:hover, .btn-link:active{
+	position:inherit;
+	top:inherit;
+	box-shadow: none;
 }
 
 .btn:active {
-	box-shadow:inset 0 -2px 0px rgba(1,1,1,0.15);   
+	box-shadow: 0 0px;   
 	position:relative;
-	top:6px;
+	top:2px;
 }
 
 
@@ -61,33 +128,34 @@ body, .btn {
  -------------------------------------------------- */
  /* Making images subtle until hover */
 
+
 .img-gray-hover img,
 img.gray-hover,
 .img-gray img,
 img.gray {
 -webkit-transform: translate3d(0,0,0);
-   -webkit-filter: grayscale(60%) contrast(80%) brightness(-0.1);
-       -ms-filter: grayscale(60%) contrast(80%) brightness(-0.1);
-        -o-filter: grayscale(60%) contrast(80%) brightness(-0.1);
+   -webkit-filter: grayscale(30%) contrast(80%) brightness(90%);
+       -ms-filter: grayscale(30%) contrast(80%) brightness(90%);
+        -o-filter: grayscale(30%) contrast(80%) brightness(90%);
            /* filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'saturate\' values=\'0.4\'/></filter><filter id=\'contrast\'><feColorMatrix type=\'contrast\' values=\'0.8\'/></filter><filter id=\'brightness\'><feColorMatrix type=\'brightness\' values=\'1.0\'/></filter></svg>#grayscale"); /* Firefox 10+ */
    -webkit-transition: -webkit-filter .5s ease-in-out;
       -moz-transition: filter .5s ease-in-out;
        -ms-transition: -ms-filter .5s ease-in-out;
         -o-transition: -o-filter .5s ease-in-out;
-           transition: filter .5s ease-in-out;
+           transition: *filter .5s ease-in-out;
 }
 
 .img-gray-hover:hover img,
 img.gray-hover:hover {
-   -webkit-filter:  grayscale(0%) contrast(100%) brightness(0);
-       -ms-filter:  grayscale(0%) contrast(100%) brightness(0);
-        -o-filter:  grayscale(0%) contrast(100%) brightness(0);
+   -webkit-filter:  grayscale(0%) contrast(100%) brightness(100%);
+       -ms-filter:  grayscale(0%) contrast(100%) brightness(100%);
+        -o-filter:  grayscale(0%) contrast(100%) brightness(100%);
            /* filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'saturate\' values=\'1.0\'/></filter><filter id=\'contrast\'><feColorMatrix type=\'contrast\' values=\'1.0\'/></filter><filter id=\'brightness\'><feColorMatrix type=\'brightness\' values=\'1.0\'/></filter></svg>#grayscale"); /* Firefox 10+ */
    -webkit-transition: -webkit-filter .5s ease-in-out;
       -moz-transition: filter .5s ease-in-out;
        -ms-transition: -ms-filter .5s ease-in-out;
         -o-transition: -o-filter .5s ease-in-out;
-           transition: filter .5s ease-in-out;
+           transition: *filter .5s ease-in-out;
 }
 
 /** HEADER ARROW
@@ -103,7 +171,7 @@ a.header{
 }
 
 .page-header:hover .backarrow > *{
-    width:170px;
+    width:200px;
     margin-left:-30px;
 }
 
@@ -187,7 +255,6 @@ a.header .page-header:hover h1{
  }
 
 
-
  /* CUSTOMIZE THE CAROUSEL
  -------------------------------------------------- */
 
@@ -269,34 +336,39 @@ a.header .page-header:hover h1{
    background-color: transparent;
    position: static;
    max-width: 550px;
-   padding: 0 20px;
-   margin-top: 200px;
- }
+   padding: 0 10px;
+   margin-top: 185px;
+   
+}
+
 .carousel-frontpage .carousel-caption h1,
 .carousel-frontpage .carousel-caption .lead {
-   margin: 0;
+   margin: 0px;
    line-height: 1.25;
    color: #fff;
-   text-shadow: 1px 1px 2px rgba(0,0,0,.6);
    font-size:24px;
  }
 
 .carousel-frontpage .carousel-caption h1 {
    font-size:36px;
- }
+}
 
 .carousel-frontpage .carousel-caption .btn {
-   margin-top: 10px;
+   margin-top: 30px;
  }
 
  .carousel-frontpage .carousel-caption .lead {
    font-weight:normal;
  }
 
- .carousel-loader .carousel-caption  h1,
- .carousel-loader .carousel-caption .lead {
- 	text-shadow: 0px 1px 1px rgba(0,0,0,.5);
- }
+ .carousel-frontpage .carousel-caption  h1,
+ .carousel-frontpage .carousel-caption  h2,
+ .carousel-frontpage .carousel-caption .lead {
+   text-shadow: 0px 1px 1px rgba(0,0,0,.5);
+   background-color:rgba(30,30,30,.75);
+   padding: 5px 10px;
+   display: inline-block; 
+}
 
 .carousel-inner > .measuring {
   display: block;
@@ -461,11 +533,15 @@ a.header .page-header:hover h1{
 
    .carousel-frontpage .carousel-caption {
      width: 65%;
-     padding: 0 70px;
-     margin-top: 100px;
+     padding: 0 55px;
+     margin-top: 80px;
    }
    .carousel-frontpage .carousel-caption h1 {
      font-size: 30px;
+   }
+
+   .carousel-frontpage .carousel-caption .lead {
+     font-size: 16px;
    }
 
    .marketing .span4 + .span4 {
@@ -479,6 +555,11 @@ a.header .page-header:hover h1{
      font-size: 18px;
      line-height: 1.5;
    }
+   
+   .carousel-frontpage .carousel-caption .btn {
+    margin-top: 10px;
+   }
+
 
  }
 

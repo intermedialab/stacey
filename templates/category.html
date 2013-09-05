@@ -24,7 +24,8 @@
 			</div>			
 			
 			  {% set formerYear = -1 %}	
-			  {% for child in sortbydate(page.children , 'date') | reverse %}
+			  {% for child in sortbydate(page.children , 'date') %}
+			     {% if "Featured" in child.tags %}
 					{% if child.date | date("Y") != formerYear %}
 						{% if formerYear > 0 %}
 			<hr/>
@@ -55,12 +56,20 @@
 				<div class="span7">
 					<a href="{{ child.url }}" style="color:inherit;text-decoration: none;">
 					<h4>{{ child.title }}</h4>
-					<p>{{ child.materials | striptags }}<br/>&mdash;&nbsp;{{ child.lead | striptags }}</p></a>
+					<p>
+					{% for participant in child.participants %}
+				    	{{ participant.name | striptags }}{% if not loop.last %}, {% endif%}
+					{% endfor %}
+					</p>
+					<p><small>{{ child.summary | striptags }}</small></p>
+					<p><small>{{ child.materials | join(', ') | striptags }}</small></p>
+					</a>
 					<p class="hidden-phone"><small>
 						{% include 'partials/tags.html' with {'page':child} %}
 					<br/>&nbsp;</small></p>
 				</div>
 			</div>
+    			  {% endif %}
 			  {% endfor %}
 
 	      <hr/>

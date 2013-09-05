@@ -1,7 +1,7 @@
-{% for tag in page.tags | split(', ') | sort %}
+{% for tag in page.tags | sort %}
 	{% set otherTags = false%}
 	{% for sibling in page.siblings %}
-		{% if tag in sibling.tags %}
+	   {% if tag in sibling.tags and "Featured" in sibling.tags %}
 			{% set otherTags = true%}
 		{% endif %}
 	{% endfor %}
@@ -10,9 +10,9 @@
 					      rel="tooltip" data-trigger="click" data-placement="bottom"
 					      data-original-title="
 					      <div style='text-align:left'>
-							<strong>Other {{ tag | lower }} works</strong><br/>
+							<strong>Other {{ tag | lower }} projects</strong><br/>
 					   	{% for sibling in page.siblings %}
-					   		{% if tag in sibling.tags %}
+					   		{% if tag in sibling.tags and "Featured" in sibling.tags %}
 					   		<a href='{{sibling.url}}' style='color:white'>{{sibling.title}} <small class='muted'><strong>{{sibling.date | date("Y")}}</strong></small></a><br/>
 					   		{% endif %}
 						{% endfor %}
