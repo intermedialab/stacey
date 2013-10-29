@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+
+      	{% include 'partials/head.html' %}
+
+	<meta name="viewport" content="width=1200">
+	<style>
+		.container .page-header {
+			margin-top:100px;
+		}
+
+		.pagination-disc ul>li>a,
+		.pagination-disc ul>.active>a {
+			padding:0 2px;
+			line-height: 20px;
+			font-size: 40px;
+			font-weight: bold;
+			background-color: none;
+			border: none;
+		}
+		.pagination-disc ul>li>a:hover, 
+		.pagination-disc ul>.active>a,
+		.pagination-disc ul>.active>span {
+			color:black;
+			background-color:#FFF !important;
+		}
+		.pagination ul {
+			box-shadow:none;
+		}
+	</style>
+ 
+    </head>
+    <body>
+	    <div class="container">
+      {% set navbar_inverse=true %}
+        {% include 'partials/navigation/navigation.html' %}
+
+			<div class="page-header" style="text-align:center;padding-bottom:25px;">
+				<h1>{{ page.title | upper }} <span class="muted">{{ page.subtitle | lower }}</span></h1>
+			</div>	
+			
+			<div style="text-align:center;margin-top:-40px">
+				<hr style="border-style: dotted;margin-top:38px;margin-bottom:-38px;" class="hidden-phone"/>
+				{% for up in page.parent %}
+				<p style="margin-top:26px;margin-bottom:-48px;"><a href="{{ up.url }}">{{ up.title }}</a></p>
+				{% endfor %}
+				<ul class="pager">
+					<li class="previous{% if page.is_first %} disabled{% endif %}">
+                    {% for sibling in page.previous_sibling %}
+						{% if page.is_first %}
+						 
+						{% else %}
+                                		<a href="{{sibling.url}}">&larr; {{sibling.title}}</a>
+                                		{% endif %}
+					{% endfor %}
+  					</li>
+					<li class="next{% if page.is_last %} disabled{% endif %}">
+                                	{% for sibling in page.next_sibling %}
+                                                {% if page.is_last %}
+                                                 
+                                                {% else %}
+                                                <a href="{{sibling.url}}">{{sibling.title}} &rarr;</a>
+                                                {% endif %}
+                                	{% endfor %}
+					</li>
+				</ul>
+			</div>
+			<p>&nbsp;</p>
+			<div style="text-align:center;">
+			
+			{% if page.sketch.js %}
+				{% for file in page.files %}
+					{% if file.file_name == page.sketch.file %}
+					<script type="application/processing" src="{{ file.url }}">
+			                     </script><canvas width="100%" height="80%" style="margin-top:20px;"></canvas>
+					{% endif %}
+				{% endfor %}
+			{% else %}
+                                <img src="{{page.thumb.url}}"/>
+			<div class="alert alert-block" style="text-align:left;position:relative;max-width:{{page.thumb.width - 100}}px;margin-top:-200px;margin-bottom:92px;margin-left:auto;margin-right:auto;">
+			 <button type="button" class="close" data-dismiss="alert">&times;</button>
+			 <strong>This sketch will not run in the browser</strong>
+			 <p style="margin-bottom:10px;">You need to download a zipped app and run it on your computer.</p>
+			 {% for file in page.files %}
+                                {% if  "zip" in file.file_name|split('.')%}
+                                        <a href="{{file.url}}" class="btn btn-warning"><i class="icon-download-alt icon-white"></i> {{file.file_name}}</a>
+                                {% endif %}
+                        {% endfor %}
+
+			</div>
+			{% endif %}
+			
+			<p class="muted"><small>
+				{% for participant in page.participants %}
+            		{{ participant.name }} <br />
+  			    {% endfor %}
+				further credits in source code
+			</small></p>
+			
+			<p>&nbsp;</p>
+                        </div> <!-- /.center -->
+
+			<hr/>
+			
+			<h3>Source Code</h3>
+
+			{% for file in page.files %}
+			<p class="muted pull-right"><small>
+				{% if  "zip" in file.file_name|split('.')%}
+					&nbsp;<a href="{{file.url}}" class="btn"><i class="icon-download-alt"></i> {{file.file_name}} with app and source</a>
+				{% elseif file.file_name == page.sketch.file %}
+					&nbsp;<a href="{{file.url}}" class="btn"><i class="icon-download-alt"></i> {{file.file_name}}</a>
+				{% endif %}
+			</small></p>
+			{% endfor %}
+
+			<div class="tabbable"> <!-- Only required for left/right tabs -->
+                                <ul class="nav nav-tabs">
+  			        {% for file in page.files if "pde" in file.file_name|split('.') %}
+                                        	<li{%if loop.first%} class="active"{%endif%}>
+							<a href="#tab{{loop.index0}}" data-toggle="tab">{{file.file_name}}</a>
+						</li>
+                        	{% endfor %}
+  				</ul>
+  				<div class="tab-content">
+                                {% for file in page.files if "pde" in file.file_name|split('.')%}
+    					<div class="tab-pane{%if loop.first%} active{%endif%}" id="tab{{loop.index0}}">
+                                        	<pre class="sourceCode" data-sourceUrl="{{file.url}}">&nbsp;</pre>
+    					</div>
+                                {% endfor %}
+				</div>	
+                        
+			
+			<div class="pagination pagination-disc pagination-centered">
+			  <ul>
+<!--			{% for sibling in page.previous_sibling %}
+                        {% if page.is_first %}
+					    <li class="disabled"><a href="#">&laquo;</a></li>
+                        {% else %}
+					    <li><a href="{{sibling.url}}">&laquo;</a></li>
+                        {% endif %}
+    		    	{% endfor %}
+-->        	
+			{% for sibling in page.siblings_and_self %}
+		    	<li {% if sibling.index == page.index %} class="active"{% endif %}><a href="{{sibling.url}}" data-toggle="tooltip" title="{{sibling.title}}">&middot;</a></li>
+			{% endfor %}
+
+<!--			{% for sibling in page.next_sibling %}
+                        {% if page.is_last %}
+					    <li class="disabled"><a href="#">&raquo;</a></li>
+                        {% else %}
+					    <li><a href="{{sibling.url}}">&raquo;</a></li>
+                        {% endif %}
+    		    	{% endfor %}
+-->
+			  </ul>
+			</div>
+
+   			{% include 'partials/footer.html' %}
+                        <script type="text/javascript" src="/public/docs/js/shCore.js"></script>
+			<script type="text/javascript" src="/public/docs/js/shBrushCpp.js"></script>
+			<script type="text/javascript" src="/public/docs/js/shBrushProcessing.js"></script>
+			<script type="text/javascript" src="/public/docs/js/shBrushJava.js"></script>
+			<script type="text/javascript" src="/public/docs/js/shBrushPython.js"></script>
+			<script type="text/javascript" src="/public/docs/js/shBrushXml.js"></script>
+                        <script type="text/javascript" src="/public/docs/js/shBrushJScript.js"></script>
+                        <link href="/public/docs/css/shCore.css" rel="stylesheet" type="text/css" />
+                        <link href="/public/docs/css/shThemeDefault.css" rel="stylesheet" type="text/css" />
+
+			<script>
+
+				$('.pagination a').tooltip();
+				
+				var $allSourceCodes = $('pre.sourceCode');
+				$allSourceCodes.each(function() {
+					var preElem = $(this);
+					$.get($(this).attr('data-sourceUrl'), function( data ) {
+					  	preElem.text(data);
+						preElem.removeClass("sourceCode").addClass("brush: processing;");
+						SyntaxHighlighter.defaults['collapse'] = false;
+						SyntaxHighlighter.defaults['gutter'] = true;
+                                                SyntaxHighlighter.defaults['toolbar'] = false;
+						SyntaxHighlighter.defaults['wrap-lines'] = false;
+						SyntaxHighlighter.highlight(preElem);
+					}, "html" );
+				})
+			</script>
+    </body>
+</html>

@@ -50,7 +50,7 @@ class SLIRConfig extends SLIRConfigDefaults
     // self::$copyEXIF	= TRUE; // crashes
     // self::$defaultCropper	= SLIR::CROP_CLASS_SMART;
     self::$errorLogPath	= '/var/log/slir.log';
-    self::$maxMemoryToAllocate	= 100;
+    self::$maxMemoryToAllocate	= 256;
 
 		// This must be the last line of this function
 		parent::init();

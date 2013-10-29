@@ -21,6 +21,7 @@
 				
 			<div class="row">
 				<div class="span8">
+
 					{% for html in page.html %}
 						{{ html.content }}
 					{% endfor %}
@@ -96,7 +97,7 @@
 					<li class="previous{% if page.is_first %} disabled{% endif %}">
                                 	{% for sibling in page.previous_sibling %}
 						{% if page.is_first %}
-						 <a href="#">&larr; No older works</a>
+						 <a href="#">&larr; No older projects</a>
 						{% else %}
                                 		<a href="{{sibling.url}}">&larr; {{sibling.title}} <small>{{ sibling.date | date("Y") }}</small></a>
                                 		{% endif %}
@@ -105,7 +106,7 @@
 					<li class="next{% if page.is_last %} disabled{% endif %}">
                                 	{% for sibling in page.next_sibling %}
                                                 {% if page.is_last %}
-                                                 <a href="#">No newer works &rarr;</a>
+                                                 <a href="#">No newer projects &rarr;</a>
                                                 {% else %}
                                                 <a href="{{sibling.url}}">{{sibling.title}} <small>{{ sibling.date | date("Y") }}</small>&rarr;</a>
                                                 {% endif %}

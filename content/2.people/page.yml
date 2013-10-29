@@ -1,0 +1,68 @@
+title: People
+content: | 
+ <div class="page-header">
+ <h1>People</h1>
+ </div>
+ <p>&nbsp;</p>
+ <div class="row">
+ 	<div class="span4">
+ 		<img src="/render/w-h300-c1:1-q80/2.people/kynp.jpg" class="featurette-image img-circle pull-right" style="width:200px;">	
+ 	</div>
+ 	<div class="span8">
+ 		<h2>Kjell Yngve Petersen</h2>
+ 		<p class="lead">Section Head, CAOS</p>
+ 		<address>
+ 			<strong>Email</strong><br/>
+ 			<a href="mailto:kynp@itu.dk">kynp@itu.dk</a>
+ 		</address>
+ 		<p class="muted">
+ Kjell Yngve Petersen received his Ph.D at CAiiA – Center for Advanced Inquiry in Integrative Arts, Planetary Collegium, University of Plymouth, UK, 2009. He is trained as actor and theatre director, and has produced theatre, opera, performance art, installations arts and media arts since the early 1980’s. Research interests include in the composition and design of intermedial performances and participatory installations, with special interest in real-time generative situations and mixed online/offline environments in which the audience takes part in performing the artwork. The research has specific focus on the development of new compositional model that integrate telemedia technology, and utilises emergent and performance-based methods to explore new performance forms and expressions. The research engages with telepresence and tele-ecologies, and involves design of dynamic adaptive architectural light, and acoustic and visual interface ecologies.
+
+
+ 		</p>
+ 	</div>
+ </div>
+ <p>&nbsp;</p>
+ <div class="row">
+        <div class="span4">
+                <img src="/render/w-h300-c1:1-q80/2.people/olek.jpg" class="featurette-image img-circle pull-right" style="width:200px;">
+        </div>
+        <div class="span8">
+                <h2>Ole Kristensen</h2>
+                <p class="lead">IT Coordinator for Art and Design</p>
+                <address>
+                        <strong>Email</strong><br/>
+                        <a href="mailto:olek@itu.dk">olek@itu.dk</a><br/>
+ 			<strong>Homepage</strong><br/>
+ 			<a href="http://ole.kristensen.name">http://ole.kristensen.name</a>
+                </address>
+                <p class="muted">
+ Ole Kristensen is a visual artist, programmer and scenographer. At the intersection of art and science he develops and appropriates new technology, creating works with software at the core.
+ His work ranges from stage performances and modern dance to large scale interactive installations. In his work he focuses on the behavioural aspects of interactivíty, adaptivity, and generativity.
+ He is driven by a playful urge to connect electronics, gadgets, visuals and moving objects in seemingly impossible combinations. Through his visual arts practice he has gained knowledge in diverse fields within engineering and programming.
+ He is working in the dance company <a href="http://recoil-performance.org">Recoil Performance Group</a> and the performance group <a href="http://in-transit.org">IN-TRANSIT</a>.
+                </p>
+        </div>
+ </div>
+ <p>&nbsp;</p>
+ <div class="row">
+        <div class="span4">
+                <img src="/render/w-h300-c1:1-q80/2.people/camb.jpg" class="featurette-image img-circle pull-right" style="width:200px;">
+        </div>
+        <div class="span8">
+                <h2>Cameline Bolbroe</h2>
+                <p class="lead">Ph. D. Fellow</p>
+                <address>
+                        <strong>Email</strong><br/>
+                        <a href="mailto:camb@itu.dk">camb@itu.dk</a><br/>
+                </address>
+                <p class="muted">
+ Cameline Bolbroe is a Ph.D. Fellow at the IT University of Copenhagen where she conducts explorative research in adaptive architecture.
+ Her research explores the potentials of architectural design that support adaptivity in relation to human experience and design process artefacts.
+ Of particular interest is the development of design methods and design thinking of experential qualities in architectural design that shows the capability to modify to change in the environment and incorporate new parameters from the environment.
+ Also her research involves the making of of full scale prototypes orchestrated as design development tools and/or adaptive experential environments that explores these features.
+ Cameline has a proffessional transdiscplinary background within architectural design and computer science as well as she has run her own company for several years in the intersection of art and the architecture. 
+                </p>
+        </div>
+ </div>
+

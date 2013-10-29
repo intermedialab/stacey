@@ -23,10 +23,6 @@
 		font-smoothing: antialiased;
  }
  
- iframe {
-  border: none;
- }
-
  footer {
  	margin-top:80px;
  	
@@ -122,40 +118,75 @@ h1, h2, h3 {
 	top:2px;
 }
 
-
-
 /* GRAYSCALE IMAGES
  -------------------------------------------------- */
  /* Making images subtle until hover */
-
 
 .img-gray-hover img,
 img.gray-hover,
 .img-gray img,
 img.gray {
+	opacity:0;
+}
+
+.img-gray-hover-new img,
+img.gray-hover-new,
+.img-gray-new img,
+img.gray-new {
+	opacity:1;
 -webkit-transform: translate3d(0,0,0);
    -webkit-filter: grayscale(30%) contrast(80%) brightness(90%);
        -ms-filter: grayscale(30%) contrast(80%) brightness(90%);
         -o-filter: grayscale(30%) contrast(80%) brightness(90%);
            /* filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'saturate\' values=\'0.4\'/></filter><filter id=\'contrast\'><feColorMatrix type=\'contrast\' values=\'0.8\'/></filter><filter id=\'brightness\'><feColorMatrix type=\'brightness\' values=\'1.0\'/></filter></svg>#grayscale"); /* Firefox 10+ */
-   -webkit-transition: -webkit-filter .5s ease-in-out;
-      -moz-transition: filter .5s ease-in-out;
-       -ms-transition: -ms-filter .5s ease-in-out;
-        -o-transition: -o-filter .5s ease-in-out;
-           transition: *filter .5s ease-in-out;
+   -webkit-transition: -webkit-filter .5s ease-in-out, opacity .5s ease-in;
+      -moz-transition: filter .5s ease-in-out, opacity .5s ease-in;
+       -ms-transition: -ms-filter .5s ease-in-out, opacity .5s ease-in;
+        -o-transition: -o-filter .5s ease-in-out, opacity .5s ease-in;
+           transition: *filter .5s ease-in-out, opacity .5s ease-in;
 }
 
-.img-gray-hover:hover img,
-img.gray-hover:hover {
+.img-gray-hover-new:hover img,
+img.gray-hover-new:hover {
    -webkit-filter:  grayscale(0%) contrast(100%) brightness(100%);
        -ms-filter:  grayscale(0%) contrast(100%) brightness(100%);
         -o-filter:  grayscale(0%) contrast(100%) brightness(100%);
            /* filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'saturate\' values=\'1.0\'/></filter><filter id=\'contrast\'><feColorMatrix type=\'contrast\' values=\'1.0\'/></filter><filter id=\'brightness\'><feColorMatrix type=\'brightness\' values=\'1.0\'/></filter></svg>#grayscale"); /* Firefox 10+ */
-   -webkit-transition: -webkit-filter .5s ease-in-out;
-      -moz-transition: filter .5s ease-in-out;
-       -ms-transition: -ms-filter .5s ease-in-out;
-        -o-transition: -o-filter .5s ease-in-out;
-           transition: *filter .5s ease-in-out;
+   -webkit-transition: -webkit-filter .5s ease-in-out, opacity .5s ease-in;
+      -moz-transition: filter .5s ease-in-out, opacity .5s ease-in;
+       -ms-transition: -ms-filter .5s ease-in-out, opacity .5s ease-in;
+        -o-transition: -o-filter .5s ease-in-out, opacity .5s ease-in;
+           transition: *filter .5s ease-in-out, opacity .5s ease-in;
+}
+
+.img-gray-hover-old img,
+img.gray-hover-old,
+.img-gray-old img,
+img.gray-old {
+	opacity:1;
+-webkit-transform: translate3d(0,0,0);
+   -webkit-filter: grayscale(30%) contrast(80%) brightness(-0.1);
+       -ms-filter: grayscale(30%) contrast(80%) brightness(-0.1);
+        -o-filter: grayscale(30%) contrast(80%) brightness(-0.1);
+           /* filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'saturate\' values=\'0.4\'/></filter><filter id=\'contrast\'><feColorMatrix type=\'contrast\' values=\'0.8\'/></filter><filter id=\'brightness\'><feColorMatrix type=\'brightness\' values=\'1.0\'/></filter></svg>#grayscale"); /* Firefox 10+ */
+   -webkit-transition: -webkit-filter .5s ease-in-out, opacity .5s ease-in;
+      -moz-transition: filter .5s ease-in-out, opacity .5s ease-in;
+       -ms-transition: -ms-filter .5s ease-in-out, opacity .5s ease-in;
+        -o-transition: -o-filter .5s ease-in-out, opacity .5s ease-in;
+           transition: *filter .5s ease-in-out, opacity .5s ease-in;
+}
+
+.img-gray-hover-old:hover img,
+img.gray-hover-old:hover {
+   -webkit-filter:  grayscale(0%) contrast(100%) brightness(0);
+       -ms-filter:  grayscale(0%) contrast(100%) brightness(0);
+        -o-filter:  grayscale(0%) contrast(100%) brightness(0);
+           /* filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'saturate\' values=\'1.0\'/></filter><filter id=\'contrast\'><feColorMatrix type=\'contrast\' values=\'1.0\'/></filter><filter id=\'brightness\'><feColorMatrix type=\'brightness\' values=\'1.0\'/></filter></svg>#grayscale"); /* Firefox 10+ */
+   -webkit-transition: -webkit-filter .5s ease-in-out, opacity .5s ease-in;
+      -moz-transition: filter .5s ease-in-out, opacity .5s ease-in;
+       -ms-transition: -ms-filter .5s ease-in-out, opacity .5s ease-in;
+        -o-transition: -o-filter .5s ease-in-out, opacity .5s ease-in;
+           transition: *filter .5s ease-in-out, opacity .5s ease-in;
 }
 
 /** HEADER ARROW
