@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+
+{% include 'partials/head.html' %}
+
+<style>
+.container.marketing {
+	margin-top:90px;
+	
+}
+</style>
+
+</head>
+<body>
+{% set navbar_inverse=true %}
+{% include 'partials/navigation/navigation.html' %}
+<div class="container">
+{{ page.content }}
+
+<div class="page-header">
+<h1>{{ page.title }}</h1>
+</div>
+
+<div class="row">
+<div class="span4">
+<h4>Events</h4>
+<div id="events" class="events"></div>
+</div>	
+<div class="span8">
+<h4>Posts</h4>
+<div id="wall"></div>
+</div>
+</div>
+
+<hr/>
+        {% include 'partials/footer.html' %}
+
+	<script src="/public/docs/js/jquery.tmpl.min.js"></script>
+
+<!-- jQuery templates. Not rendered by the browser. Notice the type attributes -->
+{% raw %}
+<script id="feedTpl" type="text/x-jquery-tmpl">
+<p>
+{{if story}}${story} {{/if}}${created_time}</p>
+<p><small>{{html message}}</small></p>
+{{if picture }}
+	{{if type != "video" }}
+           <img class="picture" src="${picture}" />
+	{{/if}}
+{{/if}}
+ 
+{{if type == "link" }}
+<div class="attachment">
+	<div class="attachment-data">
+		<p class="name"><small><a href="${link}" target="_blank">${name}</a></small></p>
+		<p class="caption">${caption}</p>
+		<p class="description"><small>${description}</small></p>
+	</div>
+</div>
+{{/if}}
+{{if type == "video" }}
+<div class="attachment">
+<iframe src="https://www.facebook.com/video/embed?video_id=${object_id}" width="1280" height="720" frameborder="0" class="video"></iframe>
+	<div class="attachment-data">
+		<p class="name"><small><a href="${link}" target="_blank">${name}</a></small></p>
+		<p class="caption">${caption}</p>
+		<p class="description"><small>${description}</small></p>
+	</div>
+</div>
+{{/if}}
+{{if type == "event" }}
+<div class="attachment">
+	<div class="attachment-data">
+		<p class="name"><small><a href="${link}" target="_blank">${name}</a></small></p>
+		<p class="caption">${caption}</p>
+		<p class="description"><small>${description}</small></p>
+	</div>
+</div>
+{{/if}}
+<p><small>${created_time}
+<!--
+{{if comments}}
+${comments.count} Comment{{if comments.count>1}}s{{/if}}
+{{else}}
+0 Comments
+{{/if}} · 
+{{if likes}}
+${likes.count} Like{{if likes.count>1}}s{{/if}}
+	{{else}}
+		0 Likes
+	{{/if}}
+-->
+	</small></p>
+<hr/>
+</script>
+{% endraw %}
+
+
+    <script>
+$(document).ready(function(){
+
+	// Calling our plugin with a page id and an access token
+	// that you will need to generate as explained in the tutorial:
+	
+	$('#wall').facebookWall({
+		id:'{{ page.facebook.id }}',
+		access_token:'{{ page.facebook.access_token }}'
+	});
+
+});
+
+// Creating our plugin. You can optionally
+// place it in a separate file.
+
+(function($){
+	
+	$.fn.facebookWall = function(options){
+		
+		options = options || {};
+		
+		if(!options.id){
+			throw new Error('You need to provide an user/page id!');
+		}
+		
+		if(!options.access_token){
+			throw new Error('You need to provide an access token!');
+		}
+		
+		// Default options of the plugin:
+		
+		options = $.extend({
+			limit: 50	// You can also pass a custom limit as a parameter.
+		},options);
+
+		// Putting together the Facebook Graph API URLs:
+
+		var graph = 'https://graph.facebook.com/'+options.id+'/?access_token='+options.access_token+'&fields=id,name,picture,posts,events&method=GET&format=json&suppress_http_code=1&date_format=U&callback=?';
+		
+		var wall = this;
+		
+		$.when($.getJSON(graph)).done(function(user){
+			
+			// user[0] contains information about the user (name and picture);
+			// posts[0].data is an array with wall posts;
+			
+			var fb = {
+				user : user,
+				posts : []
+			};
+			
+			console.log(user);
+
+			$.each(user.posts.data,function(){
+				
+				// We only show links and statuses from the posts feed:
+				if((this.type != 'link' && this.type!='status' && this.type!='photo' && this.type!='video') || !this.message){
+					return true;
+				}
+
+				// Copying the user avatar to each post, so it is
+				// easier to generate the templates:
+				this.from.picture = fb.user.picture.data.url;
+				
+				// Converting the created_time (a UNIX timestamp) to
+				// a relative time offset (e.g. 5 minutes ago):
+				this.created_time = relativeTime(this.created_time*1000);
+				
+				// Converting URL strings to actual hyperlinks:
+				this.message = urlHyperlinks(this.message);
+
+				fb.posts.push(this);
+			});
+
+			// Generating the feed template and appending:
+			$('#feedTpl').tmpl(fb.posts).appendTo(wall);
+			resizeAllVideos();
+		});
+		
+		return this;
+
+	};
+
+	// Helper functions:
+
+	function urlHyperlinks(str){
+		return str.replace(/\b((http|https):\/\/\S+)/g,'<a href="$1" target="_blank">$1</a>');
+	}
+
+	function relativeTime(time){
+		
+		// Adapted from James Herdman's http://bit.ly/e5Jnxe
+		
+		var period = new Date(time);
+		var delta = new Date() - period;
+
+		if (delta <= 10000) {	// Less than 10 seconds ago
+			return 'Just now';
+		}
+		
+		var units = null;
+		
+		var conversions = {
+			millisecond: 1,		// ms -> ms
+			second: 1000,		// ms -> sec
+			minute: 60,			// sec -> min
+			hour: 60,			// min -> hour
+			day: 24,			// hour -> day
+			month: 30,			// day -> month (roughly)
+			year: 12			// month -> year
+		};
+		
+		for (var key in conversions) {
+			if (delta < conversions[key]) {
+				break;
+			}
+			else {
+				units = key;
+				delta = delta / conversions[key];
+			}
+		}
+		
+		// Pluralize if necessary:
+		
+		delta = Math.floor(delta);
+		if (delta !== 1) { units += 's'; }
+		return [delta, units, "ago"].join(' ');
+		
+	}
+	
+})(jQuery);
+
+</script>
+
+    </body>
+</html>
