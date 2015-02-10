@@ -1,3 +1,4 @@
+{% set page = get('/') %}
 {
   {% for page in page.root %}
     {% if page.children %}
@@ -6,19 +7,42 @@
           {
             "title": "{{ page.title }}",
             "thumb": "{{ page.thumb.url }}",
-            "url": "{{ page.url }}",
+            "permalink": "http://{{ page.base_url }}/{{ page.permalink }}",
+            "url": "{{ page.url}}",
             "date": "{{ page.date }}",
             "updated": "{{ page.updated }}",
             "title": "{{ page.title }}",
+            "tags": [
+              {% for tag in page.tags %}
+                "{{ tag }}",
+              {% endfor %}
+            ],
+            "summary": "{{ page.summary }}",
+            "abstract": "{{ page.abstract }}",
             "content": "{{ page.content }}",
+            "materials": [
+              {% for material in page.materials %}
+                "{{ material }}",
+              {% endfor %}
+            ],
             "images": [
               {% for image in page.images %}
                 { "url": "{{ image.url }}", "name": "{{ image.name }}" },
               {% endfor %}
             ],
+            "movies": [
+              {% for movie in page.files if (".mov" in movie.file_name) or (".m4v" in movie.file_name) or (".mp4" in movie.file_name)%}
+                { "url": "{{ movie.url }}", "name": "{{ movie.name }}" },
+              {% endfor %}
+            ],
+            "pdfs": [
+              {% for pdf in page.files if (".pdf" in movie.file_name) %}
+                { "url": "{{ pdf.url }}", "name": "{{ pdf.name }}" },
+              {% endfor %}
+            ],
           },
         {% endfor %}
-      ]
+      ],
     {% endif %}
   {% endfor %}
 }

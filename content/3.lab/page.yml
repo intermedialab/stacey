@@ -1,20 +1,62 @@
-title: Intermedia
-subtitle: Lab
+title: About Intermedia Lab
 content: | 
  <div class="page-header">
- <h1>About the Intermedia Lab</h1>
+ <h1>About Intermedia Lab</h1>
  </div>
- 
+ <p>&nbsp;</p>
  <div class="row">
  <div class="span4">
-  <p>Under construction</p>
+  <h5>A dynamic space for big ideas</h5>
+  <p>Intermedia Lab provides a space for prototyping computational artefacts that are bigger than the laptop and the desk - a big space located on the ground floor of the IT University of Copenhagen that functions more as a laboratory than an auditorium.</p>
+  <h5>Teaching and research</h5>
+  <p>The lab hosts a community of students and researchers engaging with research and teaching that involves the digital elements of computational artefacts in architecture, lighting, design and art.</p>
+  <h5>Full scale rapid prototyping</h5>
+  <p>Intermedia Lab is a physical frame with practical materials and structures for rapid prototyping of large scale experimental setups connected to computational devices.</p> <p>Equipment can be mounted in a stage-quality celing rig, on ground stands and in modular rigging structures.</p>
+  <p>Telematic situations can be sketched using devices such as projectors, screens and cameras. Temporary architectural frames can be sketched with stands, twobyfours and stage cloth. Scenographic situations can be sketched using studio and stage lighting. Soundscapes can be sculpted using audio devices, speakers and microphones.</p>
  </div>
  <div class="span4">
+   <h5>Flexibility</h5>
+   <p>Projects live on carts and in temporary setups with a clear marking of project moveability and ownership.</p>
+   <p>To the greatest extent possible, there are no permanent fixed installations of devices. The main tech infrastructure of the lab is mounted using standard stage rigging techniques, enabling a flexible space, where even the 'Keynote' projector can be pointed elsewhere as part of an experiment.</p>
+   <h5>Equipment</h5>
+   <p>When celing mounted equipment is not in use for specific experimental setups it is left rigged in archetypical and generally useful positions.</p>
+   <p>Hardware, stands, grip, cables, electronics, devices and materials are on shelves with wheels and is stored outside the lab space when not in use.</p>
+   <h5>Hackability</h5>
+   <p>Devices used in the lab have been selected with a preference for digital contollability using open standards. Cable connections are left visible and accessible to encourage tinkering. All lighting is digitally controlled, most control signals are converted to run in dedicated cat6 cables and we still use old interface standards like DMX when they offer superior hacability.</p>
  </div>
  <div class="span4">
- <a href="/projects" class="btn btn-inverse" style="margin-top: 10px;">
- Check out the Intermedia Lab projects &raquo;
- </a>
- <br />
+ <p>&nbsp;</p>
+ <style>@media (max-width:979px){ .featurette-image.pull-left,.featurette-image.pull-right{ max-width:80% } }</style>
+  <img src="/render/w-h300-c1:1-q80/3.lab/lab.jpg" class="featurette-image img-circle pull-right" style="width:300px;margin-bottom:20px;">
+   <h5>Showcase</h5>
+   <p>Projects in the lab are encouraged to contribute visual documentation to the lab portfolio, a showcase visible for ITU visitors in the Atrium and <a href="/projects">on this website</a>.</p>
+   <h5>Exhibitions</h5>
+   <p>Courses and projects are welcome to host exhibitions and other public presentations of outcomes from the lab in the space. The lab is equipped with lighting and curtains so that it can act as an adequate frame for public events, as stage, living room or gallery.</p>
+   <h5>Contact</h5>
+   <p><script type="text/javascript" language="javascript">
+ <!--
+ // Email obfuscator script 2.1 by Tim Williams, University of Arizona
+ // Random encryption key feature by Andrew Moulden, Site Engineering Ltd
+ // This code is freeware provided these four comment lines remain intact
+ // A wizard to generate this code is at http://www.jottings.com/obfuscator/
+ { coded = "N1pGwHGCNE@Npb.CL"
+  key = "OdhEUMTXkR63fluNmcCZgVjKeLF2Dq7b8Hvx0PWorGnAtSIJaYB5z9s4Qwy1ip"
+  shift=coded.length
+  link=""
+  for (i=0; i<coded.length; i++) {
+    if (key.indexOf(coded.charAt(i))==-1) {
+      ltr = coded.charAt(i)
+      link += (ltr)
+    }
+    else {     
+      ltr = (key.indexOf(coded.charAt(i))-shift+key.length) % key.length
+      link += (key.charAt(ltr))
+    }
+  }
+ document.write("<a href='mailto:"+link+"'>"+link+"</a>")
+ }
+ //-->
+ </script><noscript>Sorry, you need Javascript on to email me.</noscript>
+ </p>
  </div>
  </div>
