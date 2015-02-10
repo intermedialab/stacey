@@ -1,0 +1,8 @@
+page_description: Intermedia Lab projects
+title: projects
+nav_all: List of projects
+nav_all_title: Full selection
+nav_featured: Featured projects
+nav_show_year: True
+content: |
+ <p class="muted"></p>

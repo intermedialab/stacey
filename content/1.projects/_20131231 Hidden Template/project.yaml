@@ -1,0 +1,45 @@
+title: Project Title # This is a comment
+
+date: 2012-03-06  # Year-Month-Date, eg. january 3rd 2004 = 2004-01-03
+
+homepage: http://CHANGEME.dk
+
+participants: # a list of elements with each three attributes; [name:], [mail:] and [role:]
+ -
+   name: FirstName LastName
+   mail: user@server.domain
+   role: Role # eg. Master Student, Advisor, Assistant
+ -
+   name: FirstName LastName
+   mail: user@server.domain
+   role: Role # eg. Master Student, Advisor, Assistant
+
+credits: # a list of [name:]s that should be credited [for:] something, just delete the tag and the list if not relevant. This could be sponsoring companies, partners or the photograper.
+ -
+   name: Someone 
+   for: Something
+
+tags: # relevant keywords. We want to use ITU course codes eg. DCDP-2013E and terms like Master Thesis, and general concepts and themes like eg. Food or Governance
+ - PhD Project
+ - Research
+ - Architecture
+ - Software
+
+materials: # just the stuff that went into making the project
+ - arduino
+ - wood
+ - computer
+
+summary: | # Max 50 words - is shown on website and screen presentations (eg. the Atrium Displays) All paragraphs start with two white-spaces.
+  Practice-based research in architecture provisioned with software that has the capability to modify to change in the environment and incorporate new parameters from the environment. As new architectural design practices emerging from this development, what are the implications this has on the built environment and our spatial experiences?
+
+abstract: | # Max 150 words - is shown on website
+
+legal: 
+ - copyright: # the name of the formal copyright holder
+ - cc-url: http://creativecommons.org/licenses/by/4.0/ # any valid url to a creative commons licence is encouraged, or you can paste in a raw text of an alternative licence below.
+ - non-cc-license-text: | # put the full raw licence if not a creative commons below, eg the MIT licence
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+   
