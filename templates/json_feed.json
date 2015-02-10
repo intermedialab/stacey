@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 {% set page = get('/') %}
+=======
+>>>>>>> deaabeb0196371458d64e9c9986f659048d439ae
 {
   {% for page in page.root %}
     {% if page.children %}

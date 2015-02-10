@@ -6,7 +6,7 @@ content: |
  <p>&nbsp;</p>
  <div class="row">
  	<div class="span4">
- 		<img src="/render/w-h300-c1:1-q80/2.people/kynp.jpg" class="featurette-image img-circle pull-right" style="width:250px;">	
+ 		<img src="/render/w-h300-c1:1-q80/2.people/kynp.jpg" class="featurette-image img-circle pull-right" style="width:200px;">	
  	</div>
  	<div class="span8">
  		<h2>Kjell Yngve Petersen</h2>
@@ -25,7 +25,7 @@ content: |
  <p>&nbsp;</p>
  <div class="row">
         <div class="span4">
-                <img src="/render/w-h300-c1:1-q80/2.people/olek.jpg" class="featurette-image img-circle pull-right" style="width:250px;">
+                <img src="/render/w-h300-c1:1-q80/2.people/olek.jpg" class="featurette-image img-circle pull-right" style="width:200px;">
         </div>
         <div class="span8">
                 <h2>Ole Kristensen</h2>
@@ -48,6 +48,7 @@ content: |
  <div class="row">
         <div class="span4">
                 <img src="/render/w-h300-c1:1-q80/2.people/camb.jpg" class="featurette-image img-circle pull-right" style="width:250px;">
+                <img src="/render/w-h300-c1:1-q80/2.people/camb.jpg" class="featurette-image img-circle pull-right" style="width:200px;">
         </div>
         <div class="span8">
                 <h2>Cameline Bolbroe</h2>
