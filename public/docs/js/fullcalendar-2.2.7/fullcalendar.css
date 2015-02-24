@@ -604,6 +604,8 @@ a.fc-more:hover {
 /* title text */
 
 .fc-toolbar h2 {
+	font-weight:100;
+	text-transform: uppercase;
 	margin: 0;
 }
 

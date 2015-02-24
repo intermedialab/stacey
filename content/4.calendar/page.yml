@@ -3,7 +3,9 @@ content: |
  <div class="page-header">
  <h1>Lab Calendar</h1>
  </div>
- 
+ <p>This calendar shows Lab bookings for the next 4 weeks.</p>
+ <p>To request a booking of the lab please email Katrine Lund at kacl@itu.dk</p>
+ <hr>
  <div id='calendar'></div>
- <div id='loading'>Wait a bit while the calendar loads</div>
- 
+ <div id='loading' style="text-align:center">Wait a bit while the calendar loads ...</div>
+ <p>Bookings are provided by the IT University TimeEdit system querying the public calendar for room 0A17.</p>
