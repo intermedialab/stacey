@@ -304,7 +304,7 @@
  								 var res = cal.event[i].summary[0].value.replace(/\\,/gi, "");
  								 res = res.replace("Study Activity", "Course:");
  								 res = res.replace(" : ", "");
- 								 res = res.replace(/.*Activity:/gi, "");
+ 								 res = res.replace(/.*Activity: Meeting/gi, "Meeting:");
  								 StrTitle = res;
  								 } 
  							//if (cal.event[i].url !== "undefined") { StrURL = cal.event[i].url[0].value;} 

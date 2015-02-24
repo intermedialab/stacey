@@ -73,7 +73,8 @@
 			success: function(data){
 				// content lines are delimited by a line break, which is a CRLF sequence
 				// RFC 5545: 3.1 Content Lines, Page 9
-				var file = data.split('\u000d\u000a');
+				var file = data.replace(/\u000d\u000a /g, ""); // remove line breaks from hard wrapped content
+				file = file.split('\u000d\u000a');
 				var idx = parseCalendar(file, cal, 0);
 				
 				// check if at least one main object has an entry
