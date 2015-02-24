@@ -615,6 +615,12 @@ a.fc-more:hover {
 	position: relative;
 }
 
+.fc-toolbar .fc-left,
+.fc-toolbar .fc-right {
+	margin-top:7px;
+}
+
+
 .fc-toolbar .fc-state-hover,
 .fc-toolbar .ui-state-hover {
 	z-index: 2;
