@@ -7,5 +7,8 @@ content: |
  <p>To request a booking of the lab please email Katrine Lund at kacl@itu.dk</p>
  <hr>
  <div id='calendar'></div>
- <div id='loading' style="text-align:center">Wait a bit while the calendar loads ...</div>
- <p>Bookings are provided by the IT University TimeEdit system querying the public calendar for room 0A17.</p>
+ <div id='loading' style="text-align:center">
+  <p>Wait a bit while the calendar loads ...</p>
+  <img src="/public/docs/js/fullcalendar-2.2.7/lib/cupertino/images/animated-overlay.gif" style="background-color:rgb(255,210,67);border-radius: 500px; margin-bottom:10px;">
+  <p><small>Bookings are provided by a query for room 0A17 to the IT University TimeEdit system.</small></p>
+ </div>
