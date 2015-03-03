@@ -2,15 +2,28 @@ RewriteEngine on
 
 # Some hosts require a rewritebase rule, if so, uncomment the RewriteBase line below. If you are running from a subdirectory, your rewritebase should match the name of the path to where stacey is stored.
 # ie. if in a folder named 'stacey', RewriteBase /stacey
-#RewriteBase /
 
-ErrorDocument 404 /404.html
+# RewriteBase /stacey
+
+Options Indexes FollowSymLinks MultiViews
+
+ErrorDocument 404 /public/404.html
+
+# Redirect legacy subdomains
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^3xw\.(.+)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
 # Rewrite any calls to *.html, *.json, *.xml, *.atom, *.rss, *.rdf or *.txt if a folder matching * exists
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} !public/
 RewriteCond %{DOCUMENT_ROOT}/public/$1.$2 !-f
 RewriteRule (.+)\.(html|json|xml|atom|rss|rdf|txt)$ $1/ [L]
+
+# Rewrite legacy urls
+RewriteCond %{REQUEST_URI} ^(.*/)index_html$ [NC]
+RewriteRule . %1 [R=301,NE,L]
 
 # Add a trailing slash to directories
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -36,13 +49,3 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !public/
 RewriteRule ^(.+)$ public/$1 [L]
 
-# Allow basic authentication
-RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-
-# Prevent access to .txt & .yml files
-RedirectMatch 404 \.(txt|yml)$
-
-# Increase cookie security
-<IfModule php5_module>
-  php_value session.cookie_httponly true
-</IfModule>
