@@ -8,7 +8,7 @@ content: |
  <hr>
  <div id='calendar'></div>
  <div id='loading' style="text-align:center">
-  <img src="/public/docs/js/fullcalendar-2.2.7/lib/cupertino/images/animated-overlay.gif" style="background-color:rgb(255,210,67);border-radius: 500px; margin-bottom:10px;">
+  <img src="/public/docs/js/vendor/fullcalendar-2.2.7/lib/cupertino/images/animated-overlay.gif" style="background-color:rgb(255,210,67);border-radius: 500px; margin-bottom:10px;">
   <p>Wait a bit while the calendar loads ...</p>
   <p><small>Bookings are provided by a query for room 0A17 to the IT University TimeEdit system.</small></p>
  </div>
