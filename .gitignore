@@ -7,3 +7,4 @@ app/_cache/images/*
 !app/_cache/images/.gitignore
 content/BDIE-E2013/**/*.zip
 logs
+1473/*.zip
