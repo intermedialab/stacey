@@ -1,0 +1,11 @@
+title: Happiness detection
+
+participants:
+ -
+  name: Thomas Sandahl Christensen
+ -
+  name: Mark Rosenvinge Hjelmgaard
+
+sketch: 
+  file: sketch_131023a.pde
+  js: true

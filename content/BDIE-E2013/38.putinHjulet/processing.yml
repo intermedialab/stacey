@@ -1,0 +1,11 @@
+title: Putin Hjulet
+
+participants:
+ -
+  name: Morten Heuser
+ -
+  name: Søren Gollander
+        
+sketch: 
+  file: putinHjulet.pde
+  js: true

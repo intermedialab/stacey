@@ -1,0 +1,10 @@
+title: Shape (and color too)
+
+participants:
+ -
+  name: Ea Lundbjerg Hansen
+  email: eluh@itu.dk
+
+sketch: 
+  file: sketch_shape_ea_cats.pde
+  js: true

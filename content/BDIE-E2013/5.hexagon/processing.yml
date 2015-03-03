@@ -1,0 +1,13 @@
+title: Hexagon
+
+participants:
+ -
+  name:  Bjarti á Steig
+  email: bjst@itu.dk
+ -
+  name: Aleksandar Lazic
+  email: alaz@itu.dk
+        
+sketch: 
+  file: hexagon.pde
+  js: true

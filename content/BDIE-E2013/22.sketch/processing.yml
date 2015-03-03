@@ -1,0 +1,10 @@
+title: Sketch
+
+participants:
+ -
+  name: Michelle Gry Sonne
+  email: mgrs@itu.dk
+        
+sketch: 
+  file: sketch.pde
+  js: false

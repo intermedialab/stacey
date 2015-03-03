@@ -1,0 +1,13 @@
+title: Blomst
+
+participants:
+ -
+  name:  Camilla Braae Olsen
+  email: cbra@itu.dk
+ -
+  name: Tina Cecilie Schultz
+  email: tces@itu.dk
+        
+sketch: 
+  file: blomst.pde
+  js: true

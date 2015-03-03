@@ -1,0 +1,10 @@
+title: Mad Matrix
+
+participants:
+ -
+  name: Jonathan Klinkby Jørgensen
+  email: jkli@itu.dk
+        
+sketch: 
+  file: Mad_Matrix.pde
+  js: true

@@ -1,0 +1,10 @@
+title: Ecce Homo Simulator
+
+participants:
+ -
+  name: Victor Bayer Permild
+  email: vbpe@itu.dk
+        
+sketch: 
+  file: ecceSimulator.zip
+  js: false

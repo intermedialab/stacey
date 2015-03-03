@@ -1,0 +1,9 @@
+title: Lights in Traffic
+
+participants:
+ -
+  name: Jannick Finne
+        
+sketch: 
+  file: lightsInTraffic.pde
+  js: true

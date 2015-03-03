@@ -1,0 +1,10 @@
+title: Dynamic Movement
+
+participants:
+ -
+  name:  Cecilie Kierkegaard Thomsen
+  email: ceki@itu.dk
+        
+sketch: 
+  file: dynamicMovement.pde
+  js: true

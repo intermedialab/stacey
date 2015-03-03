@@ -1,0 +1,10 @@
+title: Bom
+
+participants:
+ -
+  name: Jakob Pedersen
+  email: jhep@itu.dk
+        
+sketch: 
+  file: bom.pde
+  js: true
