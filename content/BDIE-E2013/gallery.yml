@@ -1,0 +1,11 @@
+title: BDIE-E213
+subtitle: Processing Exhibition
+content: |
+ <div class="alert alert-block">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>Your skecth or yourself missing?</strong><br/>
+  Student gallery submissions were stitched together from blog comments and mails.<br/>
+  Please mail ole your sketch at olek@itu.dk, if it is missing below. If your sketch is there, please check that you are correctly credited.
+ </div>
+  <p class="muted">This is a gallery of Processing sketches submitted by students at the course BDIE-E213 after 3 tour-de-force afternoon lessons.</p>
+ <p class="muted">Most of the sketches are remixes. The aim was to informally introduce coding as a creative material.</p>

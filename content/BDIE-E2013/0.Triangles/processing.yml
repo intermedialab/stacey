@@ -1,0 +1,12 @@
+title: Triangles
+
+participants:
+ - 
+  email: afly@itu.dk
+  name: Anton Flyvholm
+ -
+  name: Alexander Thomasen
+        
+sketch: 
+  file: Triangles.pde
+  js: true

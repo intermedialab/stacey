@@ -1,0 +1,10 @@
+title: Exhibition
+
+participants:
+ -
+  name: Jannie Krushave Larsen
+  email: jkru@itu.dk
+        
+sketch: 
+  file: exhibition.pde
+  js: true

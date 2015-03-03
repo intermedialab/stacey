@@ -1,0 +1,13 @@
+title: Thriller
+
+participants:
+ -
+  name: Marie Rud
+  email: mrbj@itu.dk
+ - 
+  name: Katrine Lynggaard
+  email: kalyn@itu.dk
+
+sketch: 
+  file: michaeltest.pde
+  js: true

@@ -1,0 +1,13 @@
+title: Wall of triangles
+
+participants:
+ -
+  name: Julie Jegstrup
+  email: jstj@itu.dk
+ -
+  name: Josephine Rasmussen
+  email: jslr@itu.dk
+        
+sketch: 
+  file: Trekants_leg.pde
+  js: true

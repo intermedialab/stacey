@@ -1,0 +1,10 @@
+title: Loopy Loop
+
+participants:
+ -
+  name: Jonathan Klinkby Jørgensen
+  email: jkli@itu.dk
+        
+sketch: 
+  file: Loopy_Loop.pde
+  js: true

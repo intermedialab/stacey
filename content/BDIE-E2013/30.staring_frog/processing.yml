@@ -1,0 +1,10 @@
+title: Staring Frog
+
+participants:
+ -
+  name: Terese Brandstrup Thomsen
+  email: tbth@itu.dk
+        
+sketch: 
+  file: staring_frog.pde
+  js: true

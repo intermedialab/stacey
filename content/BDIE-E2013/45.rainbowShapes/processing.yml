@@ -1,0 +1,10 @@
+title: Rainbow Shapes
+
+participants:
+ -
+  name: Anton Emil Ree Pilmark
+  email: aepi@itu.dk
+
+sketch: 
+  file: rainbowShapes.pde
+  js: true

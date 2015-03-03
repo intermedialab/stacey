@@ -1,0 +1,16 @@
+title: The Seasons
+
+participants:
+ -
+  name:  Anne Lundov
+  email: annlu@itu.dk
+ -
+  name: Anna Emilie Clausen
+  email: anem@itu.dk
+ -
+  name: Julie Ejdsvold Christensen
+  email: julc@itu.dk
+        
+sketch: 
+  file: The_Seasons.pde
+  js: true

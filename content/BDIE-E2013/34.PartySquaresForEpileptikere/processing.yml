@@ -1,0 +1,13 @@
+title: Party Squares For Epileptikere
+
+participants:
+ -
+  name: Zoe Zachariassen
+  email: zoza@itu.dk
+ -
+  name: Line Jensen
+  email: lmij@itu.dk
+        
+sketch: 
+  file: PartySquaresForEpileptikere.pde
+  js: true

@@ -1,0 +1,10 @@
+title: Hypnotic Hurricane
+
+participants:
+ -
+  name: Jonathan Klinkby Jørgensen
+  email: jkli@itu.dk
+        
+sketch: 
+  file: Hypnotic_Hurricane.pde
+  js: true

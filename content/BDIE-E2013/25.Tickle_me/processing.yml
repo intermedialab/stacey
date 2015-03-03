@@ -1,0 +1,10 @@
+title: Tickle Me
+
+participants:
+ -
+  name: Pia Lindegaard Jensen  
+  email: plje@itu.dk
+        
+sketch: 
+  file: Tickle_me.pde
+  js: true

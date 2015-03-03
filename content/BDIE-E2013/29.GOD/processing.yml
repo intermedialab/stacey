@@ -1,0 +1,10 @@
+title: GOD
+
+participants:
+ -
+  name:  Sine Astrid Morris
+  email: sasm@itu.dk
+        
+sketch: 
+  file: GOD.pde
+  js: true
