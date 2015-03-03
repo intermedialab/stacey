@@ -47,7 +47,8 @@ class SLIRConfig extends SLIRConfigDefaults
 	{
     self::$cacheDir = '../../../'.Config::$cache_folder.'/images';
     self::$documentRoot	= '../../..';
-		// This must be the last line of this function
+    self::$errorLogPath	= '/var/log/slir.log';		
+    self::$maxMemoryToAllocate	= 256;		// This must be the last line of this function
 		parent::init();
 	}
 }
