@@ -82,7 +82,7 @@ Class PageData {
     $file_types = array();
     # create an array for each file extension
     foreach(Helpers::list_files($file_path, '/\.[\w\d]+?$/', false) as $filename => $file_path) {
-      preg_match('/(?<!thumb|_lge|_sml)\.(?!yml)([\w\d]+?)$/', $filename, $ext);
+      preg_match('/(?<!thumb|_lge|_sml)\.(?!(yml|yaml))([\w\d]+?)$/', $filename, $ext);
       # return an hash containing arrays grouped by file extension
       if(isset($ext[1]) && !is_dir($file_path)) $file_types[$ext[1]][$filename] = $file_path;
     }
@@ -176,7 +176,7 @@ Class PageData {
 
   static function create_asset_collections($page) {
     # page.files
-    $page->files = Helpers::list_files($page->file_path, '/(?<!thumb|_lge|_sml)\.(?!yml)([\w\d]+?)$/i', false);
+    $page->files = Helpers::list_files($page->file_path, '/(?<!thumb|_lge|_sml)\.(?!(yml|yaml))([\w\d]+?)$/i', false);
     # page.images
     $page->images = Helpers::list_files($page->file_path, '/(?<!thumb|_lge|_sml)\.(gif|jpg|png|jpeg)$/i', false);
     # page.numbered_images
@@ -215,7 +215,7 @@ Class PageData {
       $vars = sfYaml::load($content);
     } else {
       $content_file = sprintf('%s/%s', $page->file_path, $page->template_name);
-      $content_file_path = file_exists($content_file.'.yml') ? $content_file.'.yml' : $content_file.'.txt' ;
+      $content_file_path = file_exists($content_file.'.yaml') ? $content_file.'.yaml' : (file_exists($content_file.'.yml') ? $content_file.'.yml' : $content_file.'.txt' );		
       if (!file_exists($content_file_path)) return;
       # Correct formatting of fenced content
       $content = file_get_contents($content_file_path);
