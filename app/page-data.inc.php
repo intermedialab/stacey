@@ -82,7 +82,7 @@ Class PageData {
     $file_types = array();
     # create an array for each file extension
     foreach(Helpers::list_files($file_path, '/\.[\w\d]+?$/', false) as $filename => $file_path) {
-      preg_match('/(?<!thumb|_lge|_sml)\.(?!(yml|yaml))([\w\d]+?)$/', $filename, $ext);
+      preg_match('/(?<!thumb|_lge|_sml)\.(?!ya?ml)([\w\d]+?)$/', $filename, $ext);
       # return an hash containing arrays grouped by file extension
       if(isset($ext[1]) && !is_dir($file_path)) $file_types[$ext[1]][$filename] = $file_path;
     }
@@ -176,7 +176,7 @@ Class PageData {
 
   static function create_asset_collections($page) {
     # page.files
-    $page->files = Helpers::list_files($page->file_path, '/(?<!thumb|_lge|_sml)\.(?!(yml|yaml))([\w\d]+?)$/i', false);
+    $page->files = Helpers::list_files($page->file_path, '/(?<!thumb|_lge|_sml)\.(?!ya?ml)([\w\d]+?)$/i', false);
     # page.images
     $page->images = Helpers::list_files($page->file_path, '/(?<!thumb|_lge|_sml)\.(gif|jpg|png|jpeg)$/i', false);
     # page.numbered_images

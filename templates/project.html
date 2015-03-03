@@ -21,9 +21,8 @@
 				
 			<div class="row">
 				<div class="span8">
-
-					{% for html in page.html %}
-						{{ html.content }}
+					{% for h in page.html %}
+						{{ h.content }}
 					{% endfor %}
 
 					{% if page.images %}
