@@ -152,9 +152,7 @@
 		
 			// VIDEO resizing
 			
-			$(function() {
-			    
-			    var $allVideos = $("iframe[src^='http://player.vimeo.com'], iframe[src^='http://www.youtube.com'], iframe.video, object, embed");
+			    var $allVideos = $("iframe[src*='//player.vimeo.com'], iframe[src*='//www.youtube.com'], iframe[src*='//itu.23video.com'], iframe.video, object, embed");
 				    	
 				$allVideos.each(function() {
 				
@@ -178,8 +176,6 @@
 				  });
 				
 				}).resize();
-			
-			});
 			
 			// FULLCALENDAR
 			
@@ -272,3 +268,4 @@
 	})
 		
   }(window.jQuery)
+:
