@@ -24,7 +24,7 @@
 			</div>			
 			
 			  {% set formerYear = -1 %}	
-			  {% for child in sortbydate(page.children , 'date') %}
+			  {% for child in page.children | reverse %}
 			     {% if "Featured" in child.tags %}
 					{% if child.date | date("Y") != formerYear %}
 						{% if formerYear > 0 %}

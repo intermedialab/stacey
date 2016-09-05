@@ -267,5 +267,4 @@
 		});
 	})
 		
-  }(window.jQuery)
-:
+  }(window.jQuery);

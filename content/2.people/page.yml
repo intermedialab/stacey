@@ -6,11 +6,11 @@ content: |
  <p>&nbsp;</p>
  <div class="row">
  	<div class="span4">
- 		<img src="/render/w-h300-c1:1-q80/2.people/kynp.jpg" class="featurette-image img-circle pull-right" style="width:200px;">	
+ 		<img src="/render/w-h300-c1:1-q80/2.people/kynp.jpg" class="featurette-image img-circle pull-right" style="width:200px;filter: grayscale(100%);-webkit-filter: grayscale(100%);-moz-filter: grayscale(100%);-o-filter: grayscale(100%);-ms-filter: grayscale(100%);">	
  	</div>
  	<div class="span8">
  		<h2>Kjell Yngve Petersen</h2>
- 		<p class="lead">Section Head, CAOS</p>
+ 		<p class="lead">Associate Professor</p>
  		<address>
  			<strong>Email</strong><br/>
  			<a href="mailto:kynp@itu.dk">kynp@itu.dk</a>
@@ -25,7 +25,7 @@ content: |
  <p>&nbsp;</p>
  <div class="row">
         <div class="span4">
-                <img src="/render/w-h300-c1:1-q80/2.people/olek.jpg" class="featurette-image img-circle pull-right" style="width:200px;">
+                <img src="/render/w-h300-c1:1-q80/2.people/olek.jpg" class="featurette-image img-circle pull-right" style="width:200px;filter: grayscale(100%);-webkit-filter: grayscale(100%);-moz-filter: grayscale(100%);-o-filter: grayscale(100%);-ms-filter: grayscale(100%);">
         </div>
         <div class="span8">
                 <h2>Ole Kristensen</h2>
@@ -33,8 +33,8 @@ content: |
                 <address>
                         <strong>Email</strong><br/>
                         <a href="mailto:olek@itu.dk">olek@itu.dk</a><br/>
- 			<strong>Homepage</strong><br/>
- 			<a href="http://ole.kristensen.name">http://ole.kristensen.name</a>
+                        <strong>Homepage</strong><br/>
+                        <a href="http://ole.kristensen.name">http://ole.kristensen.name</a>
                 </address>
                 <p class="muted">
  Ole Kristensen is a visual artist, programmer and scenographer. At the intersection of art and science he develops and appropriates new technology, creating works with software at the core.
@@ -47,7 +47,7 @@ content: |
  <p>&nbsp;</p>
  <div class="row">
         <div class="span4">
-                <img src="/render/w-h300-c1:1-q80/2.people/camb.jpg" class="featurette-image img-circle pull-right" style="width:200px;">
+                <img src="/render/w-h300-c1:1-q80/2.people/camb.jpg" class="featurette-image img-circle pull-right" style="width:200px;filter: grayscale(100%);-webkit-filter: grayscale(100%);-moz-filter: grayscale(100%);-o-filter: grayscale(100%);-ms-filter: grayscale(100%);">
         </div>
         <div class="span8">
                 <h2>Cameline Bolbroe</h2>
@@ -62,6 +62,27 @@ content: |
  Of particular interest is the development of design methods and design thinking of experential qualities in architectural design that shows the capability to modify to change in the environment and incorporate new parameters from the environment.
  Also her research involves the making of of full scale prototypes orchestrated as design development tools and/or adaptive experential environments that explores these features.
  Cameline has a proffessional transdiscplinary background within architectural design and computer science as well as she has run her own company for several years in the intersection of art and the architecture. 
+                </p>
+        </div>
+ </div>
+ <p>&nbsp;</p>
+ <div class="row">
+        <div class="span4">
+                <img src="/render/w-h300-c1:1-q80/2.people/hugm.png" class="featurette-image img-circle pull-right" style="width:200px;filter: grayscale(100%);-webkit-filter: grayscale(100%);-moz-filter: grayscale(100%);-o-filter: grayscale(100%);-ms-filter: grayscale(100%);">
+        </div>
+        <div class="span8">
+                <h2>Hugo Mulder</h2>
+                <p class="lead">Ph. D. Fellow</p>
+                <address>
+                        <strong>Email</strong><br/>
+                        <a href="mailto:hugm@itu.dk">hugm@itu.dk</a><br/>
+                </address>
+               <p class="muted">
+                    Before joining the Adaptive Environments research group at the ITU in 2013, Hugo worked as a senior engineer in Arup’s Advanced Technology + Research group in London where he was part of a specialist team that dealt with the design of movable structures in architecture. He was involved in the design of retractable stadium roofs, great observation wheels, transformable facade systems and dynamic art sculptures. Because kinetic systems require a-typical design tools Hugo develops and adapts computational techniques for dynamic problem solving and design collaboration. Since he joined Arup in 2002 Hugo has worked on various projects including the Public Library in Amsterdam, the European Extremely Large Telescope enclosure design in Chile, the Las Vegas High Roller observation wheel and the Qatar National Museum. Hugo graduated with honours from TU Delft in 2003.
+                    <br><br>
+                    Hugo held lectures and assisted architects and engineering students at various schools and universities and has been part of the organisational team of Smartgeometry in 2010, 2011 and 2012.
+                    <br><br>
+                    At the ITU Hugo is conducting research where the fields of design modelling and physical computing touch: the well established practice of Building Information Modelling requires extensions to reach further into the operational phase of buildings and the built environment at the same time lacks the methods and properties that make their digital counterparts rich in searchable and connected information.
                 </p>
         </div>
  </div>

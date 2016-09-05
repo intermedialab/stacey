@@ -4,7 +4,7 @@ content: |
  <h1>Lab Calendar</h1>
  </div>
  <p>This calendar shows Lab bookings for the next 4 weeks.</p>
- <p>To request a booking of the lab please email Katrine Lund at kacl@itu.dk</p>
+ <p>To request a booking of the lab please email Ole Kristensen at olek@itu.dk</p>
  <hr>
  <div id='calendar'></div>
  <div id='loading' style="text-align:center">
