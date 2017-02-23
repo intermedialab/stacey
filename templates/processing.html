@@ -86,7 +86,7 @@
 			 <strong>This sketch will not run in the browser</strong>
 			 <p style="margin-bottom:10px;">You need to download a zipped app and run it on your computer.</p>
 			 {% for file in page.files %}
-                                {% if  "zip" in file.file_name|split('.')%}
+                                {% if  "zip" in file.file_name | split('.')%}
                                         <a href="{{file.url}}" class="btn btn-warning"><i class="icon-download-alt icon-white"></i> {{file.file_name}}</a>
                                 {% endif %}
                         {% endfor %}

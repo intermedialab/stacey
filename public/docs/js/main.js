@@ -185,7 +185,7 @@
  				center: 'title',
  				right: 'month,agendaWeek,agendaDay'
  			},
- 			//timezone: 'local',
+ 			timezone: 'Europe/Copenhagen',
  			editable: false,
  			weekNumbers: true,
  			businessHours: true,
@@ -220,13 +220,13 @@
                             dtstart = cal.event[i].dtstart[0].value;
                             StrStart = dtstart.substring(0, 4) + '-' + dtstart.substring(4, 6) + '-' + dtstart.substring(6, 8);
                             if (dtstart.substring(9, 11) !== '') {
-                                StrStart = StrStart + 'T' + dtstart.substring(9, 11) + ':' + dtstart.substring(11, 13) + ':' + dtstart.substring(13, 15);
+                                StrStart = StrStart + 'T' + dtstart.substring(9, 11) + ':' + dtstart.substring(11, 13) + ':' + dtstart.substring(13, 15) + 'Z';
                             }
 
                             dtend = cal.event[i].dtend[0].value;
                             StrEnd = dtend.substring(0, 4) + '-' + dtend.substring(4, 6) + '-' + dtend.substring(6, 8);
                             if (dtend.substring(9, 11) !== '') {
-                                StrEnd = StrEnd + 'T' + dtend.substring(9, 11) + ':' + dtend.substring(11, 13) + ':' + dtend.substring(13, 15); //+'+01:00';
+                                StrEnd = StrEnd + 'T' + dtend.substring(9, 11) + ':' + dtend.substring(11, 13) + ':' + dtend.substring(13, 15) +'Z';
                             }
 
                             StrAllDay = StrStart.indexOf("T") === -1;
@@ -238,18 +238,22 @@
  								 res = res.replace("Study Activity", "Course:");
  								 res = res.replace(" : ", "");
  								 res = res.replace(/.*Activity: Meeting/gi, "Meeting:");
+								 res = res.replace(/.*Ole Kristensen/gi, "");
+                                                                 res = res.replace(/.*Activity:/gi, "");
+							 	 res = res.replace("Workshop Open Lab", "Open Lab\nClick to book");
  								 StrTitle = res;
- 								 } 
+ 								 }
+							if (StrTitle.search("Open Lab") > -1) StrURL = "http://ole.youcanbook.me"; 
  							//if (cal.event[i].url !== "undefined") { StrURL = cal.event[i].url[0].value;} 
  							if (cal.event[i].location!== "undefined") { StrLocation = cal.event[i].location[0].value;} 
  							//if (cal.event[i].description !== "undefined") { StrDescription = cal.event[i].description[0].value;} 
- 							
+ 					console.log(cal.event[i].dtstart);		
                             icalevents.push({
                                 id: StrID,
                                 title: StrTitle,
-                                url: StrURL,
-                                start: StrStart,
-                                end: StrEnd,
+                                url: StrURL, 
+                                start: moment(StrStart),
+                                end: moment(StrEnd),
                                 allDay: StrAllDay,
                                 location: StrLocation,
                                 description: StrDescription,

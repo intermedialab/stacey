@@ -34,14 +34,14 @@
 		   {% for child in page.root %}
 			{% if child.children %}
 	    		{% for child in child.children | reverse%}
-		  			{% if "Featured" in child.tags %}
+		  			{% if "Featured" in child.tags and "Website" in child.published %}
 				        <div class="item">
 				          <img src="{{ resize_path( child.thumb.url, '1200', '', '1:1', 80) }}" alt="{% if child.thumb.description %} {{ child.thumb.description }} {% endif %}" class="vertical-center gray">
 				          <div class="container">
 				            <div class="carousel-caption">
 				              <h2 class="featurette-heading" style="color:white;">{{ child.title }}</h2><br/>
 				              <p class="lead">{{ child.date | date("Y") }}</p><br/>
-			              	  <a class="btn btn-large" href="{{ child.url }}">{% if child.html %}Watch a video {% else %}See the photos{% endif %} &raquo;</a> 
+			              	  <a class="btn btn-large" href="{{ child.url }}">{% if child.html or child.video %}Watch a video {% else %}See the photos{% endif %} &raquo;</a> 
 				            </div>
 				          </div>
 				        </div>

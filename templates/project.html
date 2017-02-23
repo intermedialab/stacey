@@ -25,6 +25,14 @@
 						{{ h.content }}
 					{% endfor %}
 
+					{% for v in page.video %}
+					<div align="center" class="flex-video widescreen">
+						<video controls autoplay>
+							<source src="{{ v.url }}">
+						</video>
+					</div>
+					{% endfor %}
+
 					{% if page.images %}
 					<div id="myCarousel" class="carousel slide carousel-fade" style="margin-bottom:4px;">
 						<!-- Carousel items -->
@@ -69,23 +77,46 @@
 						  </tbody>
 						</table>
 					{% endif %}
+					{% if page.legal %}
+						<hr/>
+						<p class="lead"><small>Legal</small></p>
+						<p style="text-align:right"><small>&copy {{page.legal.copyright}} <br/>contents on this page is published under the following license</small></p>
+						{% if page.legal['non-cc-license-text'] %}
+							<p class="muted" style="text-align:right"><small>{{ page.legal['non-cc-license-text'] }}</small></p>
+						{% endif %}
+						{% if page.legal['cc-url'] %}
+							<p style="text-align:right"><a rel="license" href="{{page.legal['cc-url']}}"><img src="{{page.legal['cc-url'] |replace({'creativecommons.org/licenses': 'licensebuttons.net/i/l/', '/4.0/': '/transparent/66/66/66/88x31.png'}) }}"/></a></p>
+						{% endif %}
+					{% endif %}
 					</div>
 				</div>
 			</div>
 			<div class="hidden-desktop">
-			{% if page.participants %}
+					{% if page.participants %}
+                       		<hr/>
+                                <p class="lead"><small>Participants:</small></p>
+                                	<table>
+                                        	<tbody>
+						{% for participant in page.participants %}
+                                              		<tr>
+                                                     		<td nowrap="nowrap" valign="top"><small>{{participant.role}}:</small>&nbsp;</td>                                                      <td><small>{{ participant.name }}</small></td>
+                                                   	</tr>
+                                                {% endfor %}
+                                                </tbody>
+                                        </table>
+                                  	{% endif %}
+                                        {% if page.legal %}
                                                 <hr/>
-                                                <p class="lead"><small>Participants:</small></p>
-                                                <table>
-                                                        <tbody>
-                                                        {% for participant in page.participants %}
-                                                    <tr>
-                                                      <td nowrap="nowrap" valign="top"><small>{{participant.role}}:</small>&nbsp;</td>                                                      <td><small>{{ participant.name }}</small></td>
-                                                    </tr>
-                                                        {% endfor %}
-                                                  </tbody>
-                                                </table>
+                                                <p class="lead"><small>Legal</small></p>
+                                                <p style="text-align:right"><small>&copy {{page.legal.copyright}} <br/>contents on this page is published under the following license</small></p>
+                                                {% if page.legal['non-cc-license-text'] %}
+                                                        <p class="muted" style="text-align:right"><small>{{ page.legal['non-cc-license-text'] }}</small></p>
+                                                {% endif %}
+                                                {% if page.legal['cc-url'] %}
+                                                        <p style="text-align:right"><a rel="license" href="{{page.legal['cc-url']}}"><img src="{{page.legal['cc-url'] |replace({'creativecommons.org/licenses': 'licensebuttons.net/i/l/', '/4.0/': '/transparent/66/66/66/88x31.png'}) }}"/></a></p>
+                                                {% endif %}
                                         {% endif %}
+
 			</div>
 			<hr/>
 			<p class="lead"><small>Timeline:</small></p>
