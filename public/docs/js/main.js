@@ -203,11 +203,11 @@
  			eventLimit: true, // allow "more" link when too many events
  			eventRender: function(event, el) {
  				// render the timezone offset below the event title
- 				if (event.start.hasZone()) {
- 					el.find('.fc-title').after(
- 						$('<div class="tzo"/>').text(event.start.format('Z'))
- 					);
- 				}
+ 				//if (event.start.hasZone()) {
+ 				//	el.find('.fc-title').after(
+ 				//		$('<div class="tzo"/>').text(event.start.format('Z'))
+ 				//	);
+ 				//}
  			},
  		});
  		
@@ -247,8 +247,8 @@
  							//if (cal.event[i].url !== "undefined") { StrURL = cal.event[i].url[0].value;} 
  							if (cal.event[i].location!== "undefined") { StrLocation = cal.event[i].location[0].value;} 
  							//if (cal.event[i].description !== "undefined") { StrDescription = cal.event[i].description[0].value;} 
- 					console.log(cal.event[i].dtstart);		
-                            icalevents.push({
+                            
+			icalevents.push({
                                 id: StrID,
                                 title: StrTitle,
                                 url: StrURL, 
